@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chantry Way & Cloisters World Cup Sweepstake</title>
+    <meta
+      name="description"
+      content="A live-style World Cup sweepstake tracker for Chantry Way and Cloisters."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-loader" id="siteLoader" aria-live="polite" aria-label="Loading Chantry and Cloisters World Cup">
+      <div class="loader-card">
+        <div class="loader-ball" aria-hidden="true">⚽</div>
+        <p class="loader-kicker">Chantry &amp; Cloisters Cup Watch</p>
+        <p class="loader-title">Loading Chantry &amp; Cloisters World Cup...</p>
+        <div class="loader-messages" aria-hidden="true">
+          <span>Checking Claire&rsquo;s outrageous draw...</span>
+          <span>Calculating who&rsquo;s cooked...</span>
+          <span>Preparing the danger matches...</span>
+          <span>Sorting the survival board...</span>
+        </div>
+        <div class="loader-progress" aria-hidden="true"><span></span></div>
+      </div>
+    </div>
+
+    <canvas id="confetti" aria-hidden="true"></canvas>
+    <div class="stadium-bg" aria-hidden="true">
+      <div class="floodlight floodlight-left"></div>
+      <div class="floodlight floodlight-right"></div>
+      <div class="pitch-lines"></div>
+    </div>
+
+    <header class="app-header">
+      <nav class="topbar" aria-label="Chantry and Cloisters World Cup sections">
+        <a class="site-mark" href="#overview">
+          <span class="brand-ball">⚽</span>
+          <span>Chantry &amp; Cloisters Cup Watch</span>
+        </a>
+        <div class="nav-links">
+          <a href="#overview">Overview</a>
+          <a href="#leaderboard">Leaderboard</a>
+          <a href="#chances">Chances</a>
+          <a href="#teams">Teams</a>
+          <a href="#fixtures">Fixtures</a>
+          <a href="#rules">Rules</a>
+        </div>
+        <div class="live-pill">
+          <span class="pulse-dot"></span>
+          Cup watch
+        </div>
+      </nav>
+
+      <section class="hero-grid view" id="overview" data-view="overview">
+        <div class="hero-copy">
+          <p class="eyebrow">World Cup Tracker</p>
+          <h1>Chantry Way &amp; Cloisters World Cup</h1>
+          <p class="hero-text">
+            Five teams each. No points. No spreadsheets. Just survival, chaos and
+            bragging rights as the tournament field gets smaller.
+          </p>
+          <div class="hero-actions" aria-label="Cup watch highlights">
+            <a href="#leaderboard" class="primary-action">Survival Board</a>
+            <a href="#teams" class="secondary-action">See every draw</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel glass-panel">
+          <div class="panel-kicker">Current leader</div>
+          <div id="heroLeader" class="hero-leader"></div>
+          <div class="mini-rule">
+            Winner decided by the team that lasts furthest. Ties go to second-best
+            team, then third, fourth and fifth.
+          </div>
+        </aside>
+      </section>
+    </header>
+
+    <main class="views-shell">
+      <div class="view overview-view" data-view="overview">
+        <section class="overview-band">
+        <article class="glass-panel info-card">
+          <span class="info-icon">🏆</span>
+          <div>
+            <h2>How it works</h2>
+            <p>
+              Each person has five randomly drawn teams. The ranking sorts
+              automatically by each person&apos;s strongest surviving team, then
+              works down their list to split ties.
+            </p>
+          </div>
+        </article>
+        <article class="glass-panel info-card">
+          <span class="info-icon">📅</span>
+          <div>
+            <h2>Last updated</h2>
+            <p id="lastUpdated"></p>
+          </div>
+        </article>
+        </section>
+
+        <section class="section-shell split-layout">
+        <article class="leader-card glass-panel" id="currentLeaderCard"></article>
+        <article class="notes-card glass-panel">
+          <div class="section-heading compact">
+            <p class="eyebrow">Daily headline</p>
+            <h2 id="dailyHeadline"></h2>
+          </div>
+          <p id="featuredUpdate" class="featured-update"></p>
+          <button class="copy-update-button" id="copyUpdateButton" type="button">Copy daily update</button>
+          <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+        </article>
+        </section>
+
+        <section class="section-shell overview-dashboard">
+        <article class="notes-card glass-panel">
+          <div class="section-heading compact">
+            <p class="eyebrow">Today&apos;s update</p>
+            <h2>Tournament notes</h2>
+          </div>
+          <ul id="todaysNotes" class="notes-list"></ul>
+        </article>
+        <div id="quickStats" class="quick-stats"></div>
+        </section>
+      </div>
+
+      <section class="view section-shell" id="leaderboard" data-view="leaderboard">
+        <div class="section-heading">
+          <p class="eyebrow">Automatic survival ranking</p>
+          <h2>Survival Board</h2>
+        </div>
+        <p class="page-intro">
+          Rankings are based on each person&apos;s furthest surviving team. If that is tied,
+          the board checks second-best team, then third-best, fourth-best and fifth-best.
+        </p>
+        <div id="leaderboardRows" class="leaderboard"></div>
+      </section>
+
+      <section class="view section-shell chances-page" id="chances" data-view="chances">
+        <div class="section-heading">
+          <p class="eyebrow">Best chance analysis</p>
+          <h2>Chances</h2>
+        </div>
+        <div class="chances-hero-grid">
+          <article class="glass-panel insight-card chance-card">
+            <p class="eyebrow">Best chance of winning</p>
+            <div id="bestChance"></div>
+          </article>
+          <article class="glass-panel insight-card">
+            <p class="eyebrow">Dark horse</p>
+            <div id="darkHorse"></div>
+          </article>
+          <article class="glass-panel insight-card danger-card">
+            <p class="eyebrow">Most cooked</p>
+            <div id="mostCooked"></div>
+          </article>
+        </div>
+        <div class="analysis-grid">
+          <article class="glass-panel analysis-panel podium-panel">
+            <div class="section-heading compact">
+              <p class="eyebrow">Podium watch</p>
+              <h2>Top contenders</h2>
+            </div>
+            <div id="podiumWatch" class="podium-list"></div>
+          </article>
+          <article class="glass-panel analysis-panel">
+            <div class="section-heading compact">
+              <p class="eyebrow">Threat level</p>
+              <h2>Every player</h2>
+            </div>
+            <div id="threatLevels" class="threat-list"></div>
+          </article>
+        </div>
+        <div class="analysis-grid lower-analysis">
+          <article class="glass-panel analysis-panel">
+            <div class="section-heading compact">
+              <p class="eyebrow">What needs to happen?</p>
+              <h2>Who needs what</h2>
+            </div>
+            <div id="needsWhat" class="needs-list"></div>
+          </article>
+          <article class="glass-panel analysis-panel">
+            <div class="section-heading compact">
+              <p class="eyebrow">Best individual teams</p>
+              <h2>Biggest weapons</h2>
+            </div>
+            <div id="bestTeams" class="best-teams-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="view section-shell danger-section" id="fixtures" data-view="fixtures">
+        <div class="section-heading compact">
+          <p class="eyebrow">Fixture watch</p>
+          <h2>Danger Matches</h2>
+        </div>
+        <div id="dangerMatches" class="danger-matches"></div>
+        <div id="fixtureGroups" class="fixture-groups"></div>
+      </section>
+
+      <section class="view section-shell" id="teams" data-view="teams">
+        <div class="section-heading">
+          <p class="eyebrow">Every draw</p>
+          <h2>Player cards</h2>
+        </div>
+        <div id="playerCards" class="player-grid"></div>
+      </section>
+
+      <section class="view section-shell rules-banter-grid" id="rules" data-view="rules">
+        <article class="glass-panel rules-card">
+          <div class="section-heading compact">
+            <p class="eyebrow">Tie-break rules</p>
+            <h2>Survival order</h2>
+          </div>
+          <ol>
+            <li>Compare everyone&apos;s best remaining team.</li>
+            <li>If that is tied, compare second-best team.</li>
+            <li>Keep going through third, fourth and fifth teams.</li>
+            <li>No points scoring, no bonus rules, no maths degree required.</li>
+          </ol>
+          <div class="worked-example">
+            <h3>Simple example</h3>
+            <p>
+              If Claire and David both have a team reach the final, compare their next-best
+              teams. If Claire&apos;s second team lasted longer, Claire sits above David.
+            </p>
+          </div>
+          <div class="graveyard">
+            <h3>Eliminated teams graveyard</h3>
+            <div id="graveyardTeams"></div>
+          </div>
+        </article>
+
+        <article class="glass-panel banter-card">
+          <div class="section-heading compact">
+            <p class="eyebrow">Staff-room verdicts</p>
+            <h2>Banter board</h2>
+          </div>
+          <div id="banterBoard" class="banter-list"></div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+          <span>Chantry &amp; Cloisters Cup Watch</span>
+          <span>Built by Riley Arch © 2026</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
