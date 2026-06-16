@@ -109,7 +109,7 @@
             <h2 id="dailyHeadline"></h2>
           </div>
           <p id="featuredUpdate" class="featured-update"></p>
-          <button class="copy-update-button" id="copyUpdateButton" type="button">Copy daily update</button>
+          <button class="copy-update-button" id="copyUpdateButton" type="button">Copy today&rsquo;s staff update</button>
           <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
         </article>
         </section>
@@ -198,6 +198,13 @@
         </div>
         <div id="dangerMatches" class="danger-matches"></div>
         <div id="fixtureGroups" class="fixture-groups"></div>
+        <article class="glass-panel recent-results-panel">
+          <div class="section-heading compact">
+            <p class="eyebrow">Latest from the API</p>
+            <h2>Recent results</h2>
+          </div>
+          <div id="recentResults" class="recent-results-list"></div>
+        </article>
       </section>
 
       <section class="view section-shell" id="teams" data-view="teams">
@@ -247,6 +254,13 @@
           <span>Chantry &amp; Cloisters Cup Watch</span>
           <span>Built by Riley Arch © 2026</span>
     </footer>
+
+    <nav class="mobile-bottom-nav" aria-label="Quick mobile navigation">
+      <a href="#overview">Home</a>
+      <a href="#leaderboard">Board</a>
+      <a href="#teams">Teams</a>
+      <a href="#fixtures">Fixtures</a>
+    </nav>
 
     <script src="script.js"></script>
   </body>
