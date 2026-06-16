@@ -877,10 +877,22 @@ main {
   color: #ffe8ad;
 }
 
+.status-playing-soon {
+  border: 1px solid rgba(71, 215, 255, 0.5);
+  background: rgba(71, 215, 255, 0.13);
+  color: #c8f4ff;
+}
+
 .status-eliminated {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.045);
   color: #8390a0;
+}
+
+.status-unknown {
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  background: rgba(255, 255, 255, 0.055);
+  color: #aeb9c7;
 }
 
 .status-eliminated .flag,
@@ -996,6 +1008,37 @@ main {
 
 .fixture-groups {
   margin-top: 1rem;
+}
+
+.recent-results-panel {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.recent-results-list {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.result-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.result-row div {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.result-row span,
+.empty-state {
+  color: #cbd8e7;
 }
 
 .match-card {
@@ -1226,6 +1269,14 @@ main {
   box-shadow: inset 0 0 0 1px rgba(255, 201, 71, 0.2);
 }
 
+.team-playing-soon {
+  box-shadow: inset 0 0 0 1px rgba(71, 215, 255, 0.22);
+}
+
+.team-unknown {
+  opacity: 0.72;
+}
+
 .rules-banter-grid {
   grid-template-columns: 0.9fr 1.1fr;
 }
@@ -1369,8 +1420,9 @@ footer {
   }
 
   .topbar {
-    align-items: flex-start;
+    align-items: stretch;
     flex-wrap: wrap;
+    gap: 0.75rem;
   }
 
   .site-mark {
@@ -1380,15 +1432,37 @@ footer {
 
   .nav-links {
     order: 3;
-    flex-basis: 100%;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 0.15rem;
-    scrollbar-width: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    flex: 0 0 100%;
+    gap: 0.45rem;
+    justify-content: stretch;
+    overflow: visible;
+    padding-bottom: 0;
+    scrollbar-width: auto;
   }
 
   .nav-links::-webkit-scrollbar {
     display: none;
+  }
+
+  .nav-links a {
+    justify-content: center;
+    min-height: 2.8rem;
+    padding: 0.3rem 0.65rem;
+    border-color: rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    text-align: center;
+    white-space: normal;
+    line-height: 1.12;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus-visible,
+  .nav-links a.is-active {
+    border-color: rgba(255, 201, 71, 0.5);
+    background: linear-gradient(135deg, rgba(255, 201, 71, 0.18), rgba(71, 215, 255, 0.12));
   }
 
   h1 {
@@ -1420,7 +1494,8 @@ footer {
   .podium-item,
   .threat-row,
   .best-team-item,
-  .fixture-group-row {
+  .fixture-group-row,
+  .result-row {
     grid-template-columns: 1fr;
   }
 
