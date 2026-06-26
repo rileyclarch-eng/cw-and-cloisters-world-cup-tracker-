@@ -10,99 +10,773 @@
    ========================================================================== */
 
 const sweepstakeData = {
-  lastUpdated: "16 June 2026, 12:00 BST",
-  dailyHeadline: "USA have Riley smiling, Spain have made Claire's draw funnier, and Cape Verde have dragged Camilla into the chaos.",
-  featuredUpdate: "All sweepstake teams are still in the group stage. No one is officially through and no one is buried yet, so the official survival ranking stays level while the threat ratings carry the drama.",
-  siteLink: "riley-arch.com",
-  stageLabels: {
-    0: "Eliminated",
-    1: "Group stage",
-    2: "Round of 32",
-    3: "Round of 16",
-    4: "Quarter-finals",
-    5: "Semi-finals",
-    6: "Final",
-    7: "Winners"
+  "lastUpdated": "26 June 2026, 17:30 BST",
+  "dailyHeadline": "Claire has built a small football empire, Camilla and David are chasing hard, and Riley is somehow both flying and suffering at the same time.",
+  "featuredUpdate": "Groups A-F have now changed the sweepstake properly: several teams are already in the Round of 32, a few are dead, and the remaining group-stage picks are fighting through the final chaos of Groups G-L.",
+  "siteLink": "riley-arch.com",
+  "stageLabels": {
+    "0": "Eliminated",
+    "1": "Group stage",
+    "2": "Round of 32",
+    "3": "Round of 16",
+    "4": "Quarter-finals",
+    "5": "Semi-finals",
+    "6": "Final",
+    "7": "Winners"
   },
-  teams: {
-    Uzbekistan: { flag: "\u{1F1FA}\u{1F1FF}", status: "alive", stage: 1, group: "K", points: 0, goalDifference: 0, lastResult: "Not played yet", nextMatch: "v Colombia", nextKickoff: "Thu 18 June \u00b7 03:00 BST", threatScore: 48, formNote: "Tournament starts against Colombia.", riskNote: "Needs a steady opener before Portugal." },
-    Switzerland: { flag: "\u{1F1E8}\u{1F1ED}", status: "alive", stage: 1, group: "B", points: 1, goalDifference: 0, lastResult: "1-1 v Qatar", nextMatch: "v Bosnia and Herzegovina", nextKickoff: "Thu 18 June \u00b7 20:00 BST", threatScore: 60, formNote: "Opened with a draw.", riskNote: "Bosnia match is a direct staff-room swing." },
-    Japan: { flag: "\u{1F1EF}\u{1F1F5}", status: "alive", stage: 1, group: "F", points: 1, goalDifference: 0, lastResult: "2-2 v Netherlands", nextMatch: "v Tunisia", nextKickoff: "Sat 20 June \u00b7 23:00 BST", threatScore: 62, formNote: "Shared a chaotic point with Netherlands.", riskNote: "Tunisia will be desperate after a heavy defeat." },
-    Haiti: { flag: "\u{1F1ED}\u{1F1F9}", status: "danger", stage: 1, group: "C", points: 0, goalDifference: -1, lastResult: "0-1 v Scotland", nextMatch: "v Brazil", nextKickoff: "Sat 20 June \u00b7 01:30 BST", threatScore: 22, formNote: "Lost narrowly to Scotland.", riskNote: "Brazil next is a serious problem." },
-    "New Zealand": { flag: "\u{1F1F3}\u{1F1FF}", status: "alive", stage: 1, group: "G", points: 1, goalDifference: 0, lastResult: "2-2 v Iran", nextMatch: "v Egypt", nextKickoff: "Sun 21 June \u00b7 20:00 BST", threatScore: 46, formNote: "Refused to go away against Iran.", riskNote: "Useful lower-order cover if the goals keep coming." },
-    USA: { flag: "\u{1F1FA}\u{1F1F8}", status: "alive", stage: 1, group: "D", points: 3, goalDifference: 3, lastResult: "4-1 v Paraguay", nextMatch: "v Australia", nextKickoff: "Fri 19 June \u00b7 20:00 BST", threatScore: 78, formNote: "Best sweepstake start so far.", riskNote: "Australia is an awkward internal Riley clash." },
-    Australia: { flag: "\u{1F1E6}\u{1F1FA}", status: "alive", stage: 1, group: "D", points: 3, goalDifference: 2, lastResult: "2-0 v T\u00fcrkiye", nextMatch: "v USA", nextKickoff: "Fri 19 June \u00b7 20:00 BST", threatScore: 66, formNote: "Clean, calm opening win.", riskNote: "USA game decides which Riley team looks serious." },
-    Austria: { flag: "\u{1F1E6}\u{1F1F9}", status: "alive", stage: 1, group: "J", points: 0, goalDifference: 0, lastResult: "Not played yet", nextMatch: "v Jordan", nextKickoff: "Wed 17 June \u00b7 05:00 BST", threatScore: 58, formNote: "Still waiting to start.", riskNote: "Jordan opener is a must-control game." },
-    Scotland: { flag: "\u{1F3F4}", status: "alive", stage: 1, group: "C", points: 3, goalDifference: 1, lastResult: "1-0 v Haiti", nextMatch: "v Morocco", nextKickoff: "Fri 19 June \u00b7 23:00 BST", threatScore: 56, formNote: "Did the job against Haiti.", riskNote: "Morocco and Brazil still make this spicy." },
-    Iraq: { flag: "\u{1F1EE}\u{1F1F6}", status: "danger", stage: 1, group: "I", points: 0, goalDifference: 0, lastResult: "Not played yet", nextMatch: "v Norway", nextKickoff: "Tue 16 June \u00b7 23:00 BST", threatScore: 34, formNote: "Opens against Haaland's Norway.", riskNote: "France follows, so early damage control matters." },
-    France: { flag: "\u{1F1EB}\u{1F1F7}", status: "alive", stage: 1, group: "I", points: 0, goalDifference: 0, lastResult: "Not played yet", nextMatch: "v Senegal", nextKickoff: "Tue 16 June \u00b7 20:00 BST", threatScore: 76, formNote: "Big name still waiting to start.", riskNote: "Senegal opener is no soft landing." },
-    Ghana: { flag: "\u{1F1EC}\u{1F1ED}", status: "alive", stage: 1, group: "L", points: 0, goalDifference: 0, lastResult: "Not played yet", nextMatch: "v Panama", nextKickoff: "Wed 17 June \u00b7 17:00 BST", threatScore: 50, formNote: "Tournament starts against Panama.", riskNote: "A good opener could change Camilla's depth." },
-    "Bosnia and Herzegovina": { flag: "\u{1F1E7}\u{1F1E6}", status: "alive", stage: 1, group: "B", points: 1, goalDifference: 0, lastResult: "1-1 v Canada", nextMatch: "v Switzerland", nextKickoff: "Thu 18 June \u00b7 20:00 BST", threatScore: 48, formNote: "Took a point from Canada.", riskNote: "Switzerland is a direct Paula v Camilla clash." },
-    "Ivory Coast": { flag: "\u{1F1E8}\u{1F1EE}", status: "alive", stage: 1, group: "E", points: 3, goalDifference: 1, lastResult: "1-0 v Ecuador", nextMatch: "v Germany", nextKickoff: "Sat 20 June \u00b7 20:00 BST", threatScore: 64, formNote: "Started with a win over Ecuador.", riskNote: "Germany next is a proper test." },
-    "Cape Verde": { flag: "\u{1F1E8}\u{1F1FB}", status: "alive", stage: 1, group: "H", points: 1, goalDifference: 0, lastResult: "0-0 v Spain", nextMatch: "v Uruguay", nextKickoff: "Sun 21 June \u00b7 23:00 BST", threatScore: 54, formNote: "Held Spain. Absolute sweepstake chaos.", riskNote: "Uruguay will test whether the fairytale has legs." },
-    Algeria: { flag: "\u{1F1E9}\u{1F1FF}", status: "alive", stage: 1, group: "J", points: 0, goalDifference: 0, lastResult: "Not played yet", nextMatch: "v Argentina", nextKickoff: "Wed 17 June \u00b7 02:00 BST", threatScore: 42, formNote: "Starts against the holders.", riskNote: "Argentina then Jordan/Austria makes the opener huge." },
-    Brazil: { flag: "\u{1F1E7}\u{1F1F7}", status: "danger", stage: 1, group: "C", points: 1, goalDifference: 0, lastResult: "1-1 v Morocco", nextMatch: "v Haiti", nextKickoff: "Sat 20 June \u00b7 01:30 BST", threatScore: 72, formNote: "Still dangerous, but not flawless.", riskNote: "Dropped points means Haiti needs handling properly." },
-    Norway: { flag: "\u{1F1F3}\u{1F1F4}", status: "alive", stage: 1, group: "I", points: 0, goalDifference: 0, lastResult: "Not played yet", nextMatch: "v Iraq", nextKickoff: "Tue 16 June \u00b7 23:00 BST", threatScore: 60, formNote: "Haaland watch starts against Iraq.", riskNote: "David wants this to become more than Brazil insurance." },
-    Panama: { flag: "\u{1F1F5}\u{1F1E6}", status: "alive", stage: 1, group: "L", points: 0, goalDifference: 0, lastResult: "Not played yet", nextMatch: "v Ghana", nextKickoff: "Wed 17 June \u00b7 17:00 BST", threatScore: 38, formNote: "Starts against Ghana.", riskNote: "Needs something quickly before Croatia and England." },
-    Canada: { flag: "\u{1F1E8}\u{1F1E6}", status: "alive", stage: 1, group: "B", points: 1, goalDifference: 0, lastResult: "1-1 v Bosnia and Herzegovina", nextMatch: "v Qatar", nextKickoff: "Thu 18 June \u00b7 23:00 BST", threatScore: 50, formNote: "Opened with a draw.", riskNote: "Qatar match is where David's depth can improve." },
-    Jordan: { flag: "\u{1F1EF}\u{1F1F4}", status: "danger", stage: 1, group: "J", points: 0, goalDifference: 0, lastResult: "Not played yet", nextMatch: "v Austria", nextKickoff: "Wed 17 June \u00b7 05:00 BST", threatScore: 34, formNote: "World Cup debut starts against Austria.", riskNote: "Argentina is waiting later, so every point matters." },
-    Tunisia: { flag: "\u{1F1F9}\u{1F1F3}", status: "danger", stage: 1, group: "F", points: 0, goalDifference: -4, lastResult: "1-5 v Sweden", nextMatch: "v Japan", nextKickoff: "Sat 20 June \u00b7 23:00 BST", threatScore: 24, formNote: "Heavy defeat to Sweden.", riskNote: "Needs an immediate reset against Japan." },
-    Sweden: { flag: "\u{1F1F8}\u{1F1EA}", status: "alive", stage: 1, group: "F", points: 3, goalDifference: 4, lastResult: "5-1 v Tunisia", nextMatch: "v Netherlands", nextKickoff: "Sat 20 June \u00b7 18:00 BST", threatScore: 74, formNote: "Statement win. Loud enough for everyone to notice.", riskNote: "Netherlands is the real measuring stick." },
-    Netherlands: { flag: "\u{1F1F3}\u{1F1F1}", status: "alive", stage: 1, group: "F", points: 1, goalDifference: 0, lastResult: "2-2 v Japan", nextMatch: "v Sweden", nextKickoff: "Sat 20 June \u00b7 18:00 BST", threatScore: 66, formNote: "Shared a wild draw with Japan.", riskNote: "Sweden can take control of the group." },
-    "Saudi Arabia": { flag: "\u{1F1F8}\u{1F1E6}", status: "alive", stage: 1, group: "H", points: 1, goalDifference: 0, lastResult: "1-1 v Uruguay", nextMatch: "v Spain", nextKickoff: "Sun 21 June \u00b7 20:00 BST", threatScore: 48, formNote: "A useful point against Uruguay.", riskNote: "Spain next is awkward but the group is alive." },
-    Colombia: { flag: "\u{1F1E8}\u{1F1F4}", status: "alive", stage: 1, group: "K", points: 0, goalDifference: 0, lastResult: "Not played yet", nextMatch: "v Uzbekistan", nextKickoff: "Thu 18 June \u00b7 03:00 BST", threatScore: 58, formNote: "Starts against Uzbekistan.", riskNote: "Claire wants depth beyond Spain and Portugal." },
-    Portugal: { flag: "\u{1F1F5}\u{1F1F9}", status: "alive", stage: 1, group: "K", points: 0, goalDifference: 0, lastResult: "Not played yet", nextMatch: "v DR Congo", nextKickoff: "Wed 17 June \u00b7 20:00 BST", threatScore: 74, formNote: "Still waiting to start.", riskNote: "Needs to justify Claire's scary draw." },
-    Spain: { flag: "\u{1F1EA}\u{1F1F8}", status: "danger", stage: 1, group: "H", points: 1, goalDifference: 0, lastResult: "0-0 v Cape Verde", nextMatch: "v Saudi Arabia", nextKickoff: "Sun 21 June \u00b7 20:00 BST", threatScore: 68, formNote: "Held by Cape Verde. Still strong, much funnier.", riskNote: "Saudi Arabia draw with Uruguay keeps Group H awkward." },
-    Ecuador: { flag: "\u{1F1EA}\u{1F1E8}", status: "danger", stage: 1, group: "E", points: 0, goalDifference: -1, lastResult: "0-1 v Ivory Coast", nextMatch: "v Cura\u00e7ao", nextKickoff: "Sat 20 June \u00b7 23:00 BST", threatScore: 36, formNote: "Lost opener to Ivory Coast.", riskNote: "Needs a response against Cura\u00e7ao." },
-    Mexico: { flag: "\u{1F1F2}\u{1F1FD}", status: "alive", stage: 1, group: "A", points: 0, goalDifference: 0, lastResult: "Not played yet", nextMatch: "v Korea Republic", nextKickoff: "Thu 18 June \u00b7 02:00 BST", threatScore: 58, formNote: "Still to enter the sweepstake picture.", riskNote: "Could become useful Claire depth if the opener lands." }
+  "teams": {
+    "Uzbekistan": {
+      "flag": "🇺🇿",
+      "status": "danger",
+      "stage": 1,
+      "group": "K",
+      "points": 0,
+      "goalDifference": -7,
+      "lastResult": "0-5 v Portugal",
+      "nextMatch": "v DR Congo",
+      "nextKickoff": "Sun 28 June · 00:30 BST",
+      "threatScore": 8,
+      "formNote": "Portugal absolutely folded them 5-0.",
+      "riskNote": "Technically still breathing, but it is more life-support machine than football team."
+    },
+    "Switzerland": {
+      "flag": "🇨🇭",
+      "status": "alive",
+      "stage": 2,
+      "group": "B",
+      "points": 7,
+      "goalDifference": 4,
+      "lastResult": "2-1 v Canada",
+      "nextMatch": "Round of 32 · opponent TBD",
+      "nextKickoff": "TBD",
+      "threatScore": 72,
+      "formNote": "Won Group B and did it properly.",
+      "riskNote": "Paula has an actual knockout team here, not just hope and vibes."
+    },
+    "Japan": {
+      "flag": "🇯🇵",
+      "status": "alive",
+      "stage": 2,
+      "group": "F",
+      "points": 5,
+      "goalDifference": 4,
+      "lastResult": "1-1 v Sweden",
+      "nextMatch": "Round of 32 · v Brazil",
+      "nextKickoff": "Mon 29 June · TBC",
+      "threatScore": 70,
+      "formNote": "Unbeaten and through as Group F runners-up.",
+      "riskNote": "The reward is Brazil, because apparently happiness was not allowed."
+    },
+    "Haiti": {
+      "flag": "🇭🇹",
+      "status": "eliminated",
+      "stage": 0,
+      "group": "C",
+      "points": 0,
+      "goalDifference": -6,
+      "lastResult": "2-4 v Morocco",
+      "nextMatch": "Eliminated",
+      "nextKickoff": "Tournament over",
+      "threatScore": 0,
+      "formNote": "Out after three defeats.",
+      "riskNote": "Paula's Haiti pick has been sent to the sweepstake graveyard."
+    },
+    "New Zealand": {
+      "flag": "🇳🇿",
+      "status": "danger",
+      "stage": 1,
+      "group": "G",
+      "points": 1,
+      "goalDifference": -2,
+      "lastResult": "1-3 v Egypt",
+      "nextMatch": "v Belgium",
+      "nextKickoff": "Sat 27 June · 04:00 BST",
+      "threatScore": 20,
+      "formNote": "Still alive, but only because the door has not fully shut yet.",
+      "riskNote": "Needs a Belgium upset and other results to stop becoming another graveyard name."
+    },
+    "USA": {
+      "flag": "🇺🇸",
+      "status": "alive",
+      "stage": 2,
+      "group": "D",
+      "points": 6,
+      "goalDifference": 4,
+      "lastResult": "2-3 v Türkiye",
+      "nextMatch": "Round of 32 · v Bosnia and Herzegovina",
+      "nextKickoff": "Wed 1 July · TBC",
+      "threatScore": 76,
+      "formNote": "Lost the last group game but still won Group D.",
+      "riskNote": "Riley can call it squad rotation instead of a humbling. Very convenient."
+    },
+    "Australia": {
+      "flag": "🇦🇺",
+      "status": "alive",
+      "stage": 2,
+      "group": "D",
+      "points": 4,
+      "goalDifference": 0,
+      "lastResult": "0-0 v Paraguay",
+      "nextMatch": "Round of 32 · v Group G runner-up",
+      "nextKickoff": "TBD",
+      "threatScore": 64,
+      "formNote": "A deeply unserious 0-0 was still enough to qualify.",
+      "riskNote": "Ugly football, beautiful sweepstake points."
+    },
+    "Austria": {
+      "flag": "🇦🇹",
+      "status": "alive",
+      "stage": 1,
+      "group": "J",
+      "points": 3,
+      "goalDifference": 0,
+      "lastResult": "0-2 v Argentina",
+      "nextMatch": "v Algeria",
+      "nextKickoff": "Sun 28 June · 03:00 BST",
+      "threatScore": 55,
+      "formNote": "Beat Jordan, lost to Argentina, now it is a straight scrap.",
+      "riskNote": "A draw should be enough for second, but sweepstakes love being stupid."
+    },
+    "Scotland": {
+      "flag": "🏴",
+      "status": "danger",
+      "stage": 1,
+      "group": "C",
+      "points": 3,
+      "goalDifference": -3,
+      "lastResult": "0-3 v Brazil",
+      "nextMatch": "Waiting on third-place table",
+      "nextKickoff": "Group stage complete",
+      "threatScore": 18,
+      "formNote": "First win over Haiti, then straight into the wall.",
+      "riskNote": "Needs help from other groups. Very Scotland. Very painful."
+    },
+    "Iraq": {
+      "flag": "🇮🇶",
+      "status": "danger",
+      "stage": 1,
+      "group": "I",
+      "points": 0,
+      "goalDifference": -6,
+      "lastResult": "0-3 v France",
+      "nextMatch": "v Senegal",
+      "nextKickoff": "Fri 26 June · 20:00 BST",
+      "threatScore": 10,
+      "formNote": "France and Norway have both battered the useful points away.",
+      "riskNote": "Riley needs Iraq to produce a miracle, not a performance review."
+    },
+    "France": {
+      "flag": "🇫🇷",
+      "status": "alive",
+      "stage": 2,
+      "group": "I",
+      "points": 6,
+      "goalDifference": 5,
+      "lastResult": "3-0 v Iraq",
+      "nextMatch": "v Norway",
+      "nextKickoff": "Fri 26 June · 20:00 BST",
+      "threatScore": 84,
+      "formNote": "Qualified after two wins and looking like a proper favourite.",
+      "riskNote": "Norway decides the group winner, but Camilla already has knockout security."
+    },
+    "Ghana": {
+      "flag": "🇬🇭",
+      "status": "alive",
+      "stage": 1,
+      "group": "L",
+      "points": 4,
+      "goalDifference": 1,
+      "lastResult": "0-0 v England",
+      "nextMatch": "v Croatia",
+      "nextKickoff": "Sat 27 June · 22:00 BST",
+      "threatScore": 58,
+      "formNote": "Held England and kept another clean sheet.",
+      "riskNote": "Croatia decides whether Ghana becomes a real Camilla weapon or a stress headache."
+    },
+    "Bosnia and Herzegovina": {
+      "flag": "🇧🇦",
+      "status": "alive",
+      "stage": 2,
+      "group": "B",
+      "points": 4,
+      "goalDifference": -1,
+      "lastResult": "3-1 v Qatar",
+      "nextMatch": "Round of 32 · v USA",
+      "nextKickoff": "Wed 1 July · TBC",
+      "threatScore": 52,
+      "formNote": "Third place, but through to the knockouts.",
+      "riskNote": "Camilla gets a bonus knockout team and Riley gets an awkward USA opponent."
+    },
+    "Ivory Coast": {
+      "flag": "🇨🇮",
+      "status": "alive",
+      "stage": 2,
+      "group": "E",
+      "points": 6,
+      "goalDifference": 2,
+      "lastResult": "2-0 v Curaçao",
+      "nextMatch": "Round of 32 · opponent TBD",
+      "nextKickoff": "TBD",
+      "threatScore": 68,
+      "formNote": "Finished second in Group E and got through cleanly.",
+      "riskNote": "Camilla's draw is looking far too alive for comfort."
+    },
+    "Cape Verde": {
+      "flag": "🇨🇻",
+      "status": "danger",
+      "stage": 1,
+      "group": "H",
+      "points": 2,
+      "goalDifference": 0,
+      "lastResult": "2-2 v Uruguay",
+      "nextMatch": "v Saudi Arabia",
+      "nextKickoff": "Sat 27 June · 01:00 BST",
+      "threatScore": 46,
+      "formNote": "Drew with Spain, then drew with Uruguay. Pure nuisance behaviour.",
+      "riskNote": "Can still qualify, but Saudi Arabia is now a proper trap door."
+    },
+    "Algeria": {
+      "flag": "🇩🇿",
+      "status": "danger",
+      "stage": 1,
+      "group": "J",
+      "points": 3,
+      "goalDifference": -2,
+      "lastResult": "2-1 v Jordan",
+      "nextMatch": "v Austria",
+      "nextKickoff": "Sun 28 June · 03:00 BST",
+      "threatScore": 42,
+      "formNote": "Recovered from the Argentina punch with a win over Jordan.",
+      "riskNote": "Needs Austria handled or it becomes third-place calculator nonsense."
+    },
+    "Brazil": {
+      "flag": "🇧🇷",
+      "status": "alive",
+      "stage": 2,
+      "group": "C",
+      "points": 7,
+      "goalDifference": 6,
+      "lastResult": "3-0 v Scotland",
+      "nextMatch": "Round of 32 · v Japan",
+      "nextKickoff": "Mon 29 June · TBC",
+      "threatScore": 86,
+      "formNote": "Won Group C and looked scary doing it.",
+      "riskNote": "David's Brazil pick is exactly as annoying as expected."
+    },
+    "Norway": {
+      "flag": "🇳🇴",
+      "status": "alive",
+      "stage": 2,
+      "group": "I",
+      "points": 6,
+      "goalDifference": 4,
+      "lastResult": "3-2 v Senegal",
+      "nextMatch": "v France",
+      "nextKickoff": "Fri 26 June · 20:00 BST",
+      "threatScore": 77,
+      "formNote": "Haaland dragged them into the knockout rounds.",
+      "riskNote": "France decides whether Norway become a dark horse or a very strong second seed."
+    },
+    "Panama": {
+      "flag": "🇵🇦",
+      "status": "eliminated",
+      "stage": 0,
+      "group": "L",
+      "points": 0,
+      "goalDifference": -2,
+      "lastResult": "0-1 v Croatia",
+      "nextMatch": "v England",
+      "nextKickoff": "Sat 27 June · 22:00 BST",
+      "threatScore": 0,
+      "formNote": "Two narrow losses, zero points, officially out.",
+      "riskNote": "David's Panama pick is now just there to annoy England."
+    },
+    "Canada": {
+      "flag": "🇨🇦",
+      "status": "alive",
+      "stage": 2,
+      "group": "B",
+      "points": 4,
+      "goalDifference": 5,
+      "lastResult": "1-2 v Switzerland",
+      "nextMatch": "Round of 32 · v South Africa",
+      "nextKickoff": "Sun 28 June · TBC",
+      "threatScore": 62,
+      "formNote": "Runner-up in Group B and into the knockouts.",
+      "riskNote": "David quietly has a very solid second/third weapon here."
+    },
+    "Jordan": {
+      "flag": "🇯🇴",
+      "status": "eliminated",
+      "stage": 0,
+      "group": "J",
+      "points": 0,
+      "goalDifference": -3,
+      "lastResult": "1-2 v Algeria",
+      "nextMatch": "v Argentina",
+      "nextKickoff": "Sun 28 June · 03:00 BST",
+      "threatScore": 0,
+      "formNote": "Eliminated after losing to Austria and Algeria.",
+      "riskNote": "Helena's Jordan pick is now a farewell tour with Messi."
+    },
+    "Tunisia": {
+      "flag": "🇹🇳",
+      "status": "eliminated",
+      "stage": 0,
+      "group": "F",
+      "points": 0,
+      "goalDifference": -10,
+      "lastResult": "1-3 v Netherlands",
+      "nextMatch": "Eliminated",
+      "nextKickoff": "Tournament over",
+      "threatScore": 0,
+      "formNote": "Bottom of Group F after three defeats.",
+      "riskNote": "Conceded 12 goals. That is not a sweepstake pick, that is a public incident."
+    },
+    "Sweden": {
+      "flag": "🇸🇪",
+      "status": "alive",
+      "stage": 2,
+      "group": "F",
+      "points": 4,
+      "goalDifference": 0,
+      "lastResult": "1-1 v Japan",
+      "nextMatch": "Round of 32 · opponent TBD",
+      "nextKickoff": "TBD",
+      "threatScore": 60,
+      "formNote": "Qualified as one of the best third-place teams.",
+      "riskNote": "Helena gets a knockout save after Tunisia and Jordan went missing."
+    },
+    "Netherlands": {
+      "flag": "🇳🇱",
+      "status": "alive",
+      "stage": 2,
+      "group": "F",
+      "points": 7,
+      "goalDifference": 6,
+      "lastResult": "3-1 v Tunisia",
+      "nextMatch": "Round of 32 · v Morocco",
+      "nextKickoff": "Mon 29 June · TBC",
+      "threatScore": 79,
+      "formNote": "Won Group F and scored plenty doing it.",
+      "riskNote": "Helena's best proper threat now."
+    },
+    "Saudi Arabia": {
+      "flag": "🇸🇦",
+      "status": "danger",
+      "stage": 1,
+      "group": "H",
+      "points": 1,
+      "goalDifference": -4,
+      "lastResult": "0-4 v Spain",
+      "nextMatch": "v Cape Verde",
+      "nextKickoff": "Sat 27 June · 01:00 BST",
+      "threatScore": 22,
+      "formNote": "Spain gave them a very rude reality check.",
+      "riskNote": "Needs Cape Verde beaten and probably still needs the calculator to be kind."
+    },
+    "Colombia": {
+      "flag": "🇨🇴",
+      "status": "alive",
+      "stage": 2,
+      "group": "K",
+      "points": 6,
+      "goalDifference": 3,
+      "lastResult": "1-0 v DR Congo",
+      "nextMatch": "v Portugal",
+      "nextKickoff": "Sun 28 June · 00:30 BST",
+      "threatScore": 70,
+      "formNote": "Qualified after beating Uzbekistan and DR Congo.",
+      "riskNote": "Claire owns both sides of the Portugal match, because apparently that was allowed."
+    },
+    "Portugal": {
+      "flag": "🇵🇹",
+      "status": "alive",
+      "stage": 2,
+      "group": "K",
+      "points": 4,
+      "goalDifference": 5,
+      "lastResult": "5-0 v Uzbekistan",
+      "nextMatch": "v Colombia",
+      "nextKickoff": "Sun 28 June · 00:30 BST",
+      "threatScore": 78,
+      "formNote": "Ronaldo brace, five goals, qualified. Subtle as a fire alarm.",
+      "riskNote": "Claire's draw somehow got even more annoying."
+    },
+    "Spain": {
+      "flag": "🇪🇸",
+      "status": "alive",
+      "stage": 1,
+      "group": "H",
+      "points": 4,
+      "goalDifference": 4,
+      "lastResult": "4-0 v Saudi Arabia",
+      "nextMatch": "v Uruguay",
+      "nextKickoff": "Sat 27 June · 01:00 BST",
+      "threatScore": 76,
+      "formNote": "Recovered from the Cape Verde 0-0 by flattening Saudi Arabia.",
+      "riskNote": "Still needs the final job done, but this looks far less funny than it did last week."
+    },
+    "Ecuador": {
+      "flag": "🇪🇨",
+      "status": "alive",
+      "stage": 2,
+      "group": "E",
+      "points": 4,
+      "goalDifference": 0,
+      "lastResult": "2-1 v Germany",
+      "nextMatch": "Round of 32 · opponent TBD",
+      "nextKickoff": "TBD",
+      "threatScore": 55,
+      "formNote": "Stunned Germany and nicked a third-place knockout spot.",
+      "riskNote": "Claire now has even the 'maybe' team through. Disgusting behaviour."
+    },
+    "Mexico": {
+      "flag": "🇲🇽",
+      "status": "alive",
+      "stage": 2,
+      "group": "A",
+      "points": 9,
+      "goalDifference": 6,
+      "lastResult": "3-0 v Czechia",
+      "nextMatch": "Round of 32 · opponent TBD",
+      "nextKickoff": "Tue 30 June · TBC",
+      "threatScore": 75,
+      "formNote": "Perfect group stage: three wins, zero goals conceded.",
+      "riskNote": "Claire having Mexico as well is why sweepstakes need regulation."
+    }
   },
-  players: [
-    { name: "Paula", teams: ["Uzbekistan", "Switzerland", "Japan", "Haiti", "New Zealand"] },
-    { name: "Riley", teams: ["USA", "Australia", "Austria", "Scotland", "Iraq"] },
-    { name: "Camilla", teams: ["France", "Ghana", "Bosnia and Herzegovina", "Ivory Coast", "Cape Verde"] },
-    { name: "David", teams: ["Algeria", "Brazil", "Norway", "Panama", "Canada"] },
-    { name: "Helena", teams: ["Jordan", "Tunisia", "Sweden", "Netherlands", "Saudi Arabia"] },
-    { name: "Claire", teams: ["Colombia", "Portugal", "Spain", "Ecuador", "Mexico"] }
+  "players": [
+    {
+      "name": "Paula",
+      "teams": [
+        "Uzbekistan",
+        "Switzerland",
+        "Japan",
+        "Haiti",
+        "New Zealand"
+      ]
+    },
+    {
+      "name": "Riley",
+      "teams": [
+        "USA",
+        "Australia",
+        "Austria",
+        "Scotland",
+        "Iraq"
+      ]
+    },
+    {
+      "name": "Camilla",
+      "teams": [
+        "France",
+        "Ghana",
+        "Bosnia and Herzegovina",
+        "Ivory Coast",
+        "Cape Verde"
+      ]
+    },
+    {
+      "name": "David",
+      "teams": [
+        "Algeria",
+        "Brazil",
+        "Norway",
+        "Panama",
+        "Canada"
+      ]
+    },
+    {
+      "name": "Helena",
+      "teams": [
+        "Jordan",
+        "Tunisia",
+        "Sweden",
+        "Netherlands",
+        "Saudi Arabia"
+      ]
+    },
+    {
+      "name": "Claire",
+      "teams": [
+        "Colombia",
+        "Portugal",
+        "Spain",
+        "Ecuador",
+        "Mexico"
+      ]
+    }
   ],
-  playerNeeds: {
-    Claire: "Claire needs Portugal to start cleanly and Spain to remember where the goal is.",
-    David: "David needs Brazil to turn the Morocco wobble into a Haiti response, while Norway can become useful cover.",
-    Riley: "Riley has USA flying and Scotland surviving, but USA v Australia is going to make one of his own teams suffer.",
-    Paula: "Paula needs Switzerland or Japan to become serious, while New Zealand keeps being awkward in the best way.",
-    Helena: "Helena needs Sweden's 5-1 noise or Netherlands' quality to become the main threat.",
-    Camilla: "Camilla needs France to start like France and Cape Verde to keep being a nuisance."
+  "playerNeeds": {
+    "Claire": "Claire mainly needs everyone else to stop noticing how unfair this draw is: Mexico, Colombia, Portugal and Ecuador are already through, with Spain still live.",
+    "David": "David has Brazil, Norway and Canada through, but Algeria needs to handle Austria because Panama is already in the bin.",
+    "Riley": "Riley has USA and Australia safely through, but Austria still has work to do while Scotland and Iraq are basically clinging to the edge of a cliff.",
+    "Paula": "Paula has Switzerland and Japan through, but Haiti is gone and New Zealand plus Uzbekistan need miracle-tier nonsense.",
+    "Helena": "Helena needs Netherlands and Sweden to carry the whole draw, because Jordan and Tunisia have already packed their suitcases.",
+    "Camilla": "Camilla is in a strong chasing position with France, Bosnia and Ivory Coast through, while Ghana and Cape Verde can still make this disgusting for everyone."
   },
-  todaysNotes: [
-    "USA's 4-1 win gives Riley the loudest start of the sweepstake so far.",
-    "Spain's 0-0 draw with Cape Verde keeps Claire strong, but makes Camilla's Cape Verde pick instantly more interesting.",
-    "Sweden's 5-1 win over Tunisia is a big Helena signal, while Netherlands and Japan sharing a 2-2 keeps Group F messy.",
-    "Brazil drawing with Morocco means David's main weapon is alive, dangerous and slightly less smug.",
-    "Nobody is officially through or out yet, so all survival stages stay at group-stage level."
+  "todaysNotes": [
+    "Claire is the current problem: Mexico, Colombia, Portugal and Ecuador are already into the Round of 32, with Spain still in control of Group H.",
+    "Camilla has three confirmed knockout teams too: France, Bosnia and Herzegovina, and Ivory Coast. Ghana and Cape Verde are still live.",
+    "Riley has USA as Group D winners and Australia through as runners-up, but Scotland and Iraq are deep in calculator/prayer territory.",
+    "David has Brazil, Norway and Canada through, although Panama is officially buried and Algeria still has Austria to deal with.",
+    "Paula's Switzerland and Japan are through, Haiti is out, and New Zealand/Uzbekistan now need proper end-of-tournament chaos.",
+    "Helena has Netherlands and Sweden through, but Jordan and Tunisia are gone, so Saudi Arabia needs to actually do something against Cape Verde."
   ],
-  upcomingDangerMatches: [
-    { home: "France", away: "Senegal", kickoff: "Tue 16 June \u00b7 20:00 BST", owners: "Camilla has France.", badges: ["favourite watch", "high risk"], impact: "Camilla's biggest name finally starts, but Senegal is not a gentle opener." },
-    { home: "Iraq", away: "Norway", kickoff: "Tue 16 June \u00b7 23:00 BST", owners: "Riley has Iraq. David has Norway.", badges: ["staff v staff", "high risk"], impact: "A direct tie-break scrap. Iraq are fighting to stay useful for Riley, while Norway could give David cover if Brazil keep wobbling." },
-    { home: "Ghana", away: "Panama", kickoff: "Wed 17 June \u00b7 17:00 BST", owners: "Camilla has Ghana. David has Panama.", badges: ["staff v staff", "high risk"], impact: "Two lower-order picks, one useful chance to stop becoming dead weight." },
-    { home: "Portugal", away: "DR Congo", kickoff: "Wed 17 June \u00b7 20:00 BST", owners: "Claire has Portugal.", badges: ["favourite watch"], impact: "Claire's scary draw needs Portugal to do the grown-up part after Spain made everyone laugh." },
-    { home: "Austria", away: "Jordan", kickoff: "Wed 17 June \u00b7 05:00 BST", owners: "Riley has Austria. Helena has Jordan.", badges: ["staff v staff", "high risk"], impact: "Riley has the stronger-looking side, but Helena can dent Riley's depth if Jordan nick something." },
-    { home: "Uzbekistan", away: "Colombia", kickoff: "Thu 18 June \u00b7 03:00 BST", owners: "Paula has Uzbekistan. Claire has Colombia.", badges: ["staff v staff", "high risk"], impact: "Paula needs Uzbekistan alive for lower-order insurance. Claire can pile pressure on the board if Colombia keep moving." },
-    { home: "Switzerland", away: "Bosnia and Herzegovina", kickoff: "Thu 18 June \u00b7 20:00 BST", owners: "Paula has Switzerland. Camilla has Bosnia and Herzegovina.", badges: ["staff v staff"], impact: "A proper mid-table swing match. Switzerland could keep Paula's draw sturdy, but Bosnia and Herzegovina give Camilla useful cover." },
-    { home: "USA", away: "Australia", kickoff: "Fri 19 June \u00b7 20:00 BST", owners: "Riley has both teams.", badges: ["stress watch"], impact: "Internal stress: Riley owns both, so one good result comes with one awkward dent." },
-    { home: "Scotland", away: "Morocco", kickoff: "Fri 19 June \u00b7 23:00 BST", owners: "Riley has Scotland.", badges: ["high risk", "stress watch"], impact: "Scotland started well, but Morocco holding Brazil makes this a proper stress watch." },
-    { home: "Brazil", away: "Haiti", kickoff: "Sat 20 June \u00b7 01:30 BST", owners: "David has Brazil. Paula has Haiti.", badges: ["staff v staff", "high risk", "favourite watch"], impact: "David's biggest weapon can get even louder. Paula needs Haiti to survive what looks like a brutal test." },
-    { home: "Netherlands", away: "Sweden", kickoff: "Sat 20 June \u00b7 18:00 BST", owners: "Helena has both teams.", badges: ["favourite watch"], impact: "Helena owns both sides, so this decides whether her draw is tidy or properly scary." },
-    { home: "France", away: "Iraq", kickoff: "Mon 22 June \u00b7 22:00 BST", owners: "Camilla has France. Riley has Iraq.", badges: ["staff v staff", "high risk", "favourite watch", "stress watch"], impact: "Camilla can lean hard on France as a favourite, while Iraq are trying not to become collateral damage." },
-    { home: "Portugal", away: "Uzbekistan", kickoff: "Tue 23 June \u00b7 18:00 BST", owners: "Claire has Portugal. Paula has Uzbekistan.", badges: ["staff v staff", "high risk", "favourite watch"], impact: "Claire can make the leaderboard look very uncomfortable for everyone. Paula needs Uzbekistan to survive another nasty draw." },
-    { home: "Scotland", away: "Brazil", kickoff: "Wed 24 June \u00b7 23:00 BST", owners: "Riley has Scotland. David has Brazil.", badges: ["staff v staff", "high risk", "favourite watch", "stress watch"], impact: "This is peak sweepstake drama: Riley's Scotland run straight into David's Brazil. One result could change the staff-room mood fast." }
+  "upcomingDangerMatches": [
+    {
+      "home": "France",
+      "away": "Norway",
+      "kickoff": "Fri 26 June · 20:00 BST",
+      "owners": "Camilla has France. David has Norway.",
+      "badges": [
+        "staff v staff",
+        "favourite watch"
+      ],
+      "impact": "Both are already through, but this decides the Group I winner and who gets the nicer knockout road."
+    },
+    {
+      "home": "Senegal",
+      "away": "Iraq",
+      "kickoff": "Fri 26 June · 20:00 BST",
+      "owners": "Riley has Iraq.",
+      "badges": [
+        "high risk",
+        "stress watch"
+      ],
+      "impact": "Iraq needs a win just to have a tiny third-place argument. This is Riley watching through one eye."
+    },
+    {
+      "home": "Cape Verde",
+      "away": "Saudi Arabia",
+      "kickoff": "Sat 27 June · 01:00 BST",
+      "owners": "Camilla has Cape Verde. Helena has Saudi Arabia.",
+      "badges": [
+        "staff v staff",
+        "high risk"
+      ],
+      "impact": "A proper chaos match. Cape Verde can keep the fairytale alive, while Saudi Arabia can drag Helena back from the graveyard."
+    },
+    {
+      "home": "Uruguay",
+      "away": "Spain",
+      "kickoff": "Sat 27 June · 01:00 BST",
+      "owners": "Claire has Spain.",
+      "badges": [
+        "favourite watch",
+        "high risk"
+      ],
+      "impact": "Spain should be fine, but a wobble here would make Claire's stupidly strong draw slightly less evil."
+    },
+    {
+      "home": "New Zealand",
+      "away": "Belgium",
+      "kickoff": "Sat 27 June · 04:00 BST",
+      "owners": "Paula has New Zealand.",
+      "badges": [
+        "high risk",
+        "stress watch"
+      ],
+      "impact": "Paula needs New Zealand to do something outrageous. Not good. Very funny though."
+    },
+    {
+      "home": "Croatia",
+      "away": "Ghana",
+      "kickoff": "Sat 27 June · 22:00 BST",
+      "owners": "Camilla has Ghana.",
+      "badges": [
+        "high risk"
+      ],
+      "impact": "Ghana can become a very useful Camilla piece, but Croatia are exactly the sort of team that ruins a nice spreadsheet."
+    },
+    {
+      "home": "Colombia",
+      "away": "Portugal",
+      "kickoff": "Sun 28 June · 00:30 BST",
+      "owners": "Claire has both teams.",
+      "badges": [
+        "favourite watch",
+        "stress watch"
+      ],
+      "impact": "Claire has both, so this is less stress and more showing off. Horrible behaviour."
+    },
+    {
+      "home": "DR Congo",
+      "away": "Uzbekistan",
+      "kickoff": "Sun 28 June · 00:30 BST",
+      "owners": "Paula has Uzbekistan.",
+      "badges": [
+        "high risk"
+      ],
+      "impact": "Uzbekistan need a win and a miracle. The miracle is probably bigger than the win."
+    },
+    {
+      "home": "Algeria",
+      "away": "Austria",
+      "kickoff": "Sun 28 June · 03:00 BST",
+      "owners": "David has Algeria. Riley has Austria.",
+      "badges": [
+        "staff v staff",
+        "high risk",
+        "stress watch"
+      ],
+      "impact": "A direct David v Riley scrap. Austria can qualify with control, Algeria can flip the whole mood with one result."
+    }
   ],
-  recentResults: [],
-  banter: [
-    "Claire's draw still looks ridiculous, but Spain forgetting how to score has made the whole thing much funnier.",
-    "Riley has USA flying, Scotland surviving and Australia waiting to make Friday awkward.",
-    "Paula's New Zealand refusing to die is exactly the sort of nonsense that wins sweepstakes.",
-    "David relying on Brazil is usually safe, but the Morocco draw has added a tiny bit of staff-room spice.",
-    "Helena's Sweden result was loud enough to make everyone check her teams again.",
-    "Camilla getting Cape Verde's point against Spain is proper sweepstake chaos."
+  "recentResults": [
+    {
+      "home": "Switzerland",
+      "away": "Canada",
+      "score": "2-1",
+      "date": "24 June",
+      "owners": "Paula had Switzerland. David had Canada."
+    },
+    {
+      "home": "Bosnia and Herzegovina",
+      "away": "Qatar",
+      "score": "3-1",
+      "date": "24 June",
+      "owners": "Camilla had Bosnia and Herzegovina."
+    },
+    {
+      "home": "Scotland",
+      "away": "Brazil",
+      "score": "0-3",
+      "date": "24 June",
+      "owners": "Riley had Scotland. David had Brazil."
+    },
+    {
+      "home": "Morocco",
+      "away": "Haiti",
+      "score": "4-2",
+      "date": "24 June",
+      "owners": "Paula had Haiti."
+    },
+    {
+      "home": "Türkiye",
+      "away": "USA",
+      "score": "3-2",
+      "date": "25 June",
+      "owners": "Riley had USA."
+    },
+    {
+      "home": "Paraguay",
+      "away": "Australia",
+      "score": "0-0",
+      "date": "25 June",
+      "owners": "Riley had Australia."
+    },
+    {
+      "home": "Curaçao",
+      "away": "Ivory Coast",
+      "score": "0-2",
+      "date": "25 June",
+      "owners": "Camilla had Ivory Coast."
+    },
+    {
+      "home": "Ecuador",
+      "away": "Germany",
+      "score": "2-1",
+      "date": "25 June",
+      "owners": "Claire had Ecuador."
+    },
+    {
+      "home": "Japan",
+      "away": "Sweden",
+      "score": "1-1",
+      "date": "25 June",
+      "owners": "Paula had Japan. Helena had Sweden."
+    },
+    {
+      "home": "Tunisia",
+      "away": "Netherlands",
+      "score": "1-3",
+      "date": "25 June",
+      "owners": "Helena had both teams."
+    },
+    {
+      "home": "Mexico",
+      "away": "Czechia",
+      "score": "3-0",
+      "date": "24 June",
+      "owners": "Claire had Mexico."
+    },
+    {
+      "home": "England",
+      "away": "Ghana",
+      "score": "0-0",
+      "date": "23 June",
+      "owners": "Camilla had Ghana."
+    },
+    {
+      "home": "Colombia",
+      "away": "DR Congo",
+      "score": "1-0",
+      "date": "23 June",
+      "owners": "Claire had Colombia."
+    },
+    {
+      "home": "Portugal",
+      "away": "Uzbekistan",
+      "score": "5-0",
+      "date": "23 June",
+      "owners": "Claire had Portugal. Paula had Uzbekistan."
+    },
+    {
+      "home": "Jordan",
+      "away": "Algeria",
+      "score": "1-2",
+      "date": "22 June",
+      "owners": "Helena had Jordan. David had Algeria."
+    },
+    {
+      "home": "Argentina",
+      "away": "Austria",
+      "score": "2-0",
+      "date": "22 June",
+      "owners": "Riley had Austria."
+    },
+    {
+      "home": "France",
+      "away": "Iraq",
+      "score": "3-0",
+      "date": "22 June",
+      "owners": "Camilla had France. Riley had Iraq."
+    },
+    {
+      "home": "Norway",
+      "away": "Senegal",
+      "score": "3-2",
+      "date": "22 June",
+      "owners": "David had Norway."
+    },
+    {
+      "home": "Spain",
+      "away": "Saudi Arabia",
+      "score": "4-0",
+      "date": "21 June",
+      "owners": "Claire had Spain. Helena had Saudi Arabia."
+    },
+    {
+      "home": "Uruguay",
+      "away": "Cape Verde",
+      "score": "2-2",
+      "date": "21 June",
+      "owners": "Camilla had Cape Verde."
+    }
+  ],
+  "banter": [
+    "Claire's draw is so stacked it needs VAR, HR and possibly a small independent investigation.",
+    "Mexico perfect, Colombia through, Portugal through, Ecuador through, Spain still alive. Claire has turned this into career mode on beginner difficulty.",
+    "Riley has USA and Australia through, but Scotland and Iraq are hanging on like a phone at 1% with no charger.",
+    "Camilla's Cape Verde pick has gone from joke team to genuine pest. Proper fly-in-the-kitchen energy.",
+    "David's Brazil pick is doing Brazil things, which is deeply boring and deeply effective.",
+    "Paula losing Haiti but keeping Switzerland and Japan is very 'bad day, good insurance policy'.",
+    "Helena has Netherlands carrying the bag while Jordan and Tunisia are already sat at the airport Wetherspoons.",
+    "Uzbekistan are still technically alive in the same way a laptop on 0% is technically alive for three seconds after unplugging it.",
+    "Australia qualifying with a 0-0 is disgusting football but excellent sweepstake terrorism.",
+    "Spain beating Saudi 4-0 has ruined the funniest timeline, but Cape Verde can still restore the chaos."
   ]
 };
 
@@ -123,7 +797,25 @@ const routes = ["overview", "leaderboard", "chances", "teams", "fixtures", "rule
 let currentProfiles = [];
 
 const fixtureFlags = {
-  Morocco: "🇲🇦"
+  "Argentina": "🇦🇷",
+  "Belgium": "🇧🇪",
+  "Curaçao": "🇨🇼",
+  "Czechia": "🇨🇿",
+  "DR Congo": "🇨🇩",
+  "Egypt": "🇪🇬",
+  "England": "🏴",
+  "Germany": "🇩🇪",
+  "Iran": "🇮🇷",
+  "Morocco": "🇲🇦",
+  "Paraguay": "🇵🇾",
+  "Qatar": "🇶🇦",
+  "Senegal": "🇸🇳",
+  "South Africa": "🇿🇦",
+  "South Korea": "🇰🇷",
+  "Türkiye": "🇹🇷",
+  "Turkey": "🇹🇷",
+  "Uruguay": "🇺🇾",
+  "Croatia": "🇭🇷"
 };
 
 const statusWeight = {
@@ -676,6 +1368,23 @@ function applyTrackerData(tracker) {
   }
 }
 
+function parseTrackerDate(value) {
+  if (!value) return null;
+
+  const cleaned = String(value)
+    .replace(/BST/g, "GMT+0100")
+    .replace(/·/g, " ")
+    .trim();
+  const timestamp = Date.parse(cleaned);
+  return Number.isNaN(timestamp) ? null : timestamp;
+}
+
+function isRemoteTrackerOlder(tracker) {
+  const remoteDate = parseTrackerDate(tracker?.lastUpdated);
+  const localDate = parseTrackerDate(sweepstakeData.lastUpdated);
+  return Boolean(remoteDate && localDate && remoteDate < localDate);
+}
+
 async function loadRemoteTracker() {
   if (window.location.protocol === "file:") return;
 
@@ -683,6 +1392,10 @@ async function loadRemoteTracker() {
     const response = await fetch("/api/tracker", { headers: { accept: "application/json" } });
     if (!response.ok) throw new Error(`Tracker API returned ${response.status}`);
     const tracker = await response.json();
+    if (isRemoteTrackerOlder(tracker)) {
+      console.info("Ignoring older tracker data:", tracker.lastUpdated);
+      return;
+    }
     applyTrackerData(tracker);
     renderDashboard();
   } catch (error) {
